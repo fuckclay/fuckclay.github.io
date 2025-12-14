@@ -15,19 +15,24 @@
     <meta name="twitter:image" content="https://femboy.blitzedzz.xyz/gifs/boykisser.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script>
+<script>
 const password = "Blitzedzz926";
+
+if (localStorage.getItem("galleryAuth") !== "true") {
+    askPassword();
+}
 
 function askPassword() {
     const userPass = prompt("Enter password to access the gallery:");
-    if (userPass !== password) {
+    if (userPass === password) {
+        localStorage.setItem("galleryAuth", "true");
+    } else {
         alert("Incorrect password!");
-        window.location.href = "https://google.com"; // redirect if wrong
+        window.location.href = "https://google.com";
     }
 }
-
-askPassword();
 </script>
+
 
     <style>
         body {
@@ -107,9 +112,9 @@ const gifList = [
     "cutelittlefemboyowo.gif",
     "headshot.gif",
     "kitty.gif",
-    "me2.gif"
-    "furry_being_petted.gif"
-    "text_bubble_meme.gif"
+    "me2.gif",
+    "furry_being_petted.gif",
+    "text_bubble_meme.gif",
     "zGAUK5YuI6bcfSZ3.gif"
 ];
 
@@ -141,6 +146,7 @@ gifList.forEach(file => {
 
 </body>
 </html>
+
 
 
 
